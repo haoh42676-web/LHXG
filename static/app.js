@@ -11,11 +11,6 @@ function pct(value) {
   return `${(Number(value) * 100).toFixed(2)}%`;
 }
 
-function num(value, digits = 2) {
-  if (value === null || value === undefined || Number.isNaN(Number(value))) return "-";
-  return Number(value).toFixed(digits);
-}
-
 function renderMetrics(metrics, targetCount) {
   const items = [
     ["目标股票", targetCount],

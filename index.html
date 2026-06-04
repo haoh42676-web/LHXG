@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A股量化选股平台</title>
+  <style>
+    :root { font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif; background: #f4f7f5; color: #17201b; }
+    body { margin: 0; }
+    .shell { max-width: 980px; margin: 0 auto; padding: 42px 22px; }
+    h1 { font-size: 34px; margin: 0 0 10px; }
+    p { color: #59645e; line-height: 1.8; }
+    .panel { background: white; border: 1px solid #dce4df; border-radius: 8px; margin-top: 20px; padding: 20px; }
+    .warn { background: #fff7e8; border-color: #efd7a5; color: #6d4500; }
+    code, pre { background: #f3f6f5; border-radius: 6px; }
+    code { padding: 2px 6px; }
+    pre { overflow: auto; padding: 14px; }
+    a.button {
+      background: #116149; border-radius: 6px; color: white; display: inline-block; font-weight: 700;
+      margin-top: 10px; padding: 12px 16px; text-decoration: none;
+    }
+    ul { line-height: 1.9; }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <h1>A股量化选股平台</h1>
+    <p>这是 GitHub Pages 静态入口。完整功能包括沪深全市场抓取、1/5/20日预测、100轮以上优化、逐日误差验证、DeepSeek 复核。</p>
+
+    <section class="panel warn">
+      <strong>重要说明</strong>
+      <p>GitHub Pages 只能运行静态 HTML/CSS/JS，不能运行 Python、FastAPI、AKShare、Baostock、Tushare，也不能在网页端直接爬取 A 股全市场数据。因此只打开 GitHub 仓库网址或 Pages 静态网址，无法完成完整量化流程。</p>
+    </section>
+
+    <section class="panel">
+      <h2>完整运行方式</h2>
+      <p>在本机、VPS、Render、Railway、云服务器等能运行 Python 的环境执行：</p>
+      <pre><code>pip install -r requirements.txt
+$env:DEEPSEEK_API_KEY="你的DeepSeek Key"
+python server.py</code></pre>
+      <p>然后打开：</p>
+      <pre><code>http://127.0.0.1:8501</code></pre>
+      <p>登录账号：<code>13246429006</code>，密码：<code>102906</code></p>
+    </section>
+
+    <section class="panel">
+      <h2>GitHub 上传文件</h2>
+      <ul>
+        <li>必须上传：<code>server.py</code>、<code>requirements.txt</code>、<code>README.md</code>、<code>index.html</code>、<code>.gitignore</code>、<code>.nojekyll</code>、<code>quant_platform/</code>、<code>static/</code></li>
+        <li>不要上传：<code>data/cache/</code>、<code>data/outputs/</code>、<code>__pycache__/</code>、<code>.env</code>、<code>.venv/</code></li>
+      </ul>
+      <a class="button" href="static/index.html">查看静态前端文件</a>
+    </section>
+  </main>
+</body>
+</html>
