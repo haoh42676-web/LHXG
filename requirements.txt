@@ -1,0 +1,14 @@
+akshare>=1.16.0
+baostock>=0.9.1
+efinance>=0.5.8
+fastapi>=0.115.0
+mootdx>=0.11.7
+numpy>=2.0.0
+pandas>=2.2.0
+plotly>=5.20.0
+requests>=2.31.0
+scikit-learn>=1.5.0
+streamlit>=1.36.0
+tqdm>=4.66.0
+tushare>=1.4.29
+uvicorn>=0.30.0

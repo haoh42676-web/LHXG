@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A股量化选股平台</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="topbar">
+      <div>
+        <h1>A股量化选股平台</h1>
+        <p>沪深全市场 · 最长5年数据 · 1日/5日/1个月收益预测 · 新闻公告政策资金热点研报能抓则抓</p>
+      </div>
+      <div class="actions">
+        <button id="runBtn">一键开始选股</button>
+        <button id="logoutBtn" class="secondary">退出</button>
+      </div>
+    </section>
+
+    <section class="controls">
+      <label>
+        股票数量上限
+        <input id="topN" type="number" min="20" placeholder="留空=沪深全市场" />
+      </label>
+      <label>
+        历史日历天数
+        <input id="lookbackDays" type="number" min="260" max="1825" value="1825" />
+      </label>
+      <label>
+        复权方式
+        <select id="adjust">
+          <option value="qfq" selected>前复权</option>
+          <option value="">不复权</option>
+          <option value="hfq">后复权</option>
+        </select>
+      </label>
+      <label class="check"><input id="fetchNews" type="checkbox" checked /> 抓取新闻/公告/政策/资金/热点/研报</label>
+      <label class="check"><input id="refreshHistory" type="checkbox" /> 强制刷新行情</label>
+      <label class="check"><input id="refreshNews" type="checkbox" /> 强制刷新事件数据</label>
+    </section>
+
+    <section class="status">
+      <div id="message">等待开始。全市场首次运行可能耗时很久，单源失败会自动切换备用源并继续。</div>
+      <div class="gate" id="gate">误差0.5个百分点验证：未运行</div>
+    </section>
+
+    <section class="metrics" id="metrics"></section>
+
+    <section>
+      <div class="section-title">
+        <h2>目标股票</h2>
+        <span>条件：5日预测 >= 5%，1个月预测 >= 15%；异常股票不剔除但会标记风险</span>
+      </div>
+      <div class="table-wrap">
+        <table id="targetTable"></table>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>完整排名</h2>
+        <span>展示全市场候选，便于人工复核</span>
+      </div>
+      <div class="table-wrap">
+        <table id="rankTable"></table>
+      </div>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
